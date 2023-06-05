@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login page</title>
+    <style>
+        body {
+            background-image: url("../static/images/create_account.jpg");
+            background-size: cover;
+            background-position: absolute;
+            display: block;
+            margin: 0;
+            padding: 0;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+                sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}" />
+</head>
+
+<body class="min-w-full bg-center bg-no-repeat bg-cover md:bg-auto md:bg-center">
+    <div class="box">
+        <h2>Kayıt</h2>
+        <form action="/sign_up" method="POST">
+            <div class="inputBox">
+                <input type="text" name="username" value="" onkeyup="this.setAttribute('value', this.value);"
+                    required />
+                <label>Kullanıcı Adı</label>
+            </div>
+            <div class="inputBox">
+                <input type="password" name="password" value="" onkeyup="this.setAttribute('value', this.value);"
+                    required />
+                <label>Şifre</label>
+                </div>
+                <div class="inputBox">
+                    <input type="number" name="age" value="" onkeyup="this.setAttribute('value', this.value);" required />
+                    <label>Yaş</label>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="gender" value="" onkeyup="this.setAttribute('value', this.value);" required />
+                    <label>Cinsiyet</label>
+            </div>
+            <div class="inputBox">
+                <input type="email" name="email" value="" onkeyup="this.setAttribute('value', this.value);" required />
+                <label>E-mail</label>
+            </div>
+            <div class="flex justify-between">
+                <input type="submit" name="sign-up" value="Kayıt ol" />
+                <a class="sign-up no-underline" href="/login">Giriş yap</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
