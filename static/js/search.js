@@ -13,9 +13,15 @@ $(document).ready(function () {
         console.log(data);
         $(".content").addClass("hidden");
         $(".alternative_content").removeClass("hidden");
+        $("#recipe_name").text(data.recipe_name);
+        $("#ingredients").text(data.ingredients);
+        $("#comments").text(data.comments);
+        $("#username").text(data.username);
+        $("#recipe_name").attr(`data:image/jpeg;base64,${data.image}`);
+        $("#search_button").text('Başka Tarif');
       },
       error: function (xhr, status, error) {
-        console.log("Client Not Found!");
+        console.log("Recipe Not Found!");
         jQuery.noConflict();
       },
     });

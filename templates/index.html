@@ -35,12 +35,12 @@
     </header>
     <div class="flex justify-center w-3/4 mx-auto my-4">
         <input type="text" placeholder="bugun ne yemek istersin?" id="search_value" class="border px-4 rounded">
-        <button class="btn text-white bg-red-600 w-24 mx-4" id="search_button">Ara</button>
+        <button class="btn text-white bg-[#D61C4E] w-32 mx-4" id="search_button">Ara</button>
     </div>
     <main class="bg-[#FAC213] w-3/4 mx-auto h-2/3 rounded">
         <div class="flex flex-wrap content">
             {% for recipe in recipes_show %}
-            <div class="bg-[#f2d67e] recipe-card  shadow w-1/4 m-4 rounded-xl p-2">
+            <div class="bg-[#f2d67e] recipe-card  shadow w-1/4 min-w-[80px] m-4 rounded-xl p-2">
                 {% if loop.index <= images|length %} <img src="data:image/jpeg;base64,{{ images[loop.index-1] }}" alt="--"
                     class="w-full h-40 rounded">
                     {% endif %}
@@ -50,16 +50,18 @@
                     <p>by: {{ recipe.username }}</p>
             </div>
             {% endfor %}
+        </div>
         <div class="alternative_content hidden flex flex-wrap">
-            
+
             <div class="bg-[#f2d67e] recipe-card  shadow w-1/4 m-4 rounded-xl p-2">
+                <img id="recipe_image" src="" alt="--" class="w-full h-40 rounded">
                 <p class="text-white"><span id="recipe_name"></span></p>
                 <p>malzemeler: <span id="ingredients"></span></p>
                 <p>yorumlar: <span id="comments"></span></p>
                 <p>by: <span id="username"></span></p>
             </div>
-            </div>
         </div>
+
 
     </main>
 </div>

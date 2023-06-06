@@ -58,6 +58,7 @@ def index():
         for recipe in recipes_show:
             image_base64 = base64.b64encode(recipe.photo).decode('utf-8')
             images.append(image_base64)
+        # print(images)
         username = ''  
         if 'username' in session:  
             username = session['username']
@@ -186,8 +187,10 @@ def search():
     query_recipe = Recipes.query.filter_by(recipe_name=query).first()  
     # print(type(query_recipe))
     recipe_data = {
-        'name': query_recipe.recipe_name,
+        'recipe_name': query_recipe.recipe_name,
         'ingredients': query_recipe.ingredients,
+        'comments': query_recipe.comments,
+        'username': query_recipe.username,
         'image' : base64.b64encode(query_recipe.photo).decode('utf-8')
     }
     return recipe_data
