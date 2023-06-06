@@ -38,23 +38,26 @@
         <button class="btn text-white bg-[#D61C4E] w-32 mx-4" id="search_button">Ara</button>
     </div>
     <main class="bg-[#FAC213] w-3/4 mx-auto h-2/3 rounded">
-        <div class="flex flex-wrap content">
+        <div class="flex justify-between flex-wrap content">
             {% for recipe in recipes_show %}
-            <div class="bg-[#f2d67e] recipe-card  shadow w-1/4 min-w-[80px] m-4 rounded-xl p-2">
+            <div class="bg-[#D61C4E] recipe-card shadow w-1/4 min-w-[80px] m-8 rounded-2xl">
                 {% if loop.index <= images|length %} <img src="data:image/jpeg;base64,{{ images[loop.index-1] }}" alt="--"
-                    class="w-full h-40 rounded">
+                    class="w-full h-40 rounded-t-2xl">
                     {% endif %}
-                    <p class="text-white">{{ recipe.recipe_name }}</p>
-                    <p>malzemeler: {{ recipe.ingredients }}</p>
-                    <p>yorumlar: {{ recipe.comments }}</p>
-                    <p>by: {{ recipe.username }}</p>
+                    <div class="text-white p-2 font-serif text-xs">
+                        <p class="text-xl">{{ recipe.recipe_name.capitalize() }}</p>
+                        <p>malzemeler: {{ recipe.ingredients }}</p>
+                        <p>yorumlar: {{ recipe.comments }}</p>
+                        <p>by: {{ recipe.username }}</p>
+                    </div>
             </div>
             {% endfor %}
+
         </div>
         <div class="alternative_content hidden flex flex-wrap">
 
             <div class="bg-[#f2d67e] recipe-card  shadow w-1/4 m-4 rounded-xl p-2">
-                <img id="recipe_image" src="" alt="--" class="w-full h-40 rounded">
+                <img id="recipe_image" src="../static/images/ingredients.jpg" alt="--" class="w-full h-40 rounded">
                 <p class="text-white"><span id="recipe_name"></span></p>
                 <p>malzemeler: <span id="ingredients"></span></p>
                 <p>yorumlar: <span id="comments"></span></p>

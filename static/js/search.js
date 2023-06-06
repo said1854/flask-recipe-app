@@ -17,8 +17,9 @@ $(document).ready(function () {
         $("#ingredients").text(data.ingredients);
         $("#comments").text(data.comments);
         $("#username").text(data.username);
-        $("#recipe_name").attr(`data:image/jpeg;base64,${data.image}`);
-        $("#search_button").text('Başka Tarif');
+        const newSrc = `data:image/jpeg;base64,${data.image}`;
+        $("#recipe_image").prop("src", newSrc);
+        $("#search_button").text("Başka Tarif");
       },
       error: function (xhr, status, error) {
         console.log("Recipe Not Found!");

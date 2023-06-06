@@ -24,13 +24,17 @@
             <li class="mr-2"><a href="/logout">Çıkış yap</a></li>
         </ul>
     </header>
-    <main class="bg-[#FAC213] w-3/4 mx-auto h-2/3">
+    <div class="flex justify-center w-3/4 mx-auto my-4">
+        <input type="text" placeholder="bugun ne yemek istersin?" id="search_value" class="border px-4 rounded">
+        <button class="btn text-white bg-[#D61C4E] w-32 mx-4" id="search_button">Ara</button>
+    </div>
+    <main class="bg-[#FAC213] w-3/4 mx-auto h-2/3 p-4">
         <div class="flex h-12 mb-12 justify-between">
-            <h2 class="mx-20 text-2xl ">Senin Tariflerin</h2>
+            <h2 class="mx-20 text-2xl">Senin Tariflerin</h2>
             <div class="flex">
-                <button class="btn text-white bg-red-600 w-24 m-2"><a href="/add_recipe">Tarif ekle</a></button>
-                <button class="btn text-white bg-red-600 w-24 m-2"><a href="/delete_recipe">Tarifini Sil</a></button>
-                <button class="btn text-white bg-red-600 w-32 m-2"><a href="/update_recipe">Tarif düzenle</a></button>
+                <button class="btn text-white bg-[#D61C4E] w-24 m-2"><a href="/add_recipe">Tarif ekle</a></button>
+                <button class="btn text-white bg-[#D61C4E] w-24 m-2"><a href="/delete_recipe">Tarifini Sil</a></button>
+                <button class="btn text-white bg-[#D61C4E] w-32 m-2"><a href="/update_recipe">Tarif düzenle</a></button>
             </div>
         </div>
         <div>
