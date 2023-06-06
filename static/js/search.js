@@ -22,6 +22,11 @@ $(document).ready(function () {
         $("#search_button").text("Başka Tarif");
       },
       error: function (xhr, status, error) {
+        $(".content").addClass("hidden");
+        $(".alternative_content").removeClass("hidden");
+        $(".alternative_content > p").remove();
+        $(".alternative_content").append("<p>Tarif bulunamadı!<p>");
+        $("#search_button").text("Başka Tarif");
         console.log("Recipe Not Found!");
         jQuery.noConflict();
       },

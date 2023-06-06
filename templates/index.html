@@ -38,7 +38,7 @@
         <button class="btn text-white bg-[#D61C4E] w-32 mx-4" id="search_button">Ara</button>
     </div>
     <main class="bg-[#FAC213] w-3/4 mx-auto h-2/3 rounded">
-        <div class="flex justify-between flex-wrap content">
+        <div class="flex justify-center flex-wrap content">
             {% for recipe in recipes_show %}
             <div class="bg-[#D61C4E] recipe-card shadow w-1/4 min-w-[80px] m-8 rounded-2xl">
                 {% if loop.index <= images|length %} <img src="data:image/jpeg;base64,{{ images[loop.index-1] }}" alt="--"
