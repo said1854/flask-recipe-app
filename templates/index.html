@@ -11,28 +11,17 @@
 {% endblock %}
 {% block link5 %}
 {% endblock %}
-
+{% block header %}
+{% if username %}
+<li class="mr-4 hover:no-underline no-underline hover:text-white"><a href="/account">Hesabın({{username}})</a></li>
+<li class="mr-2"><a href="/logout">Çıkış yap</a></li>
+{% else %}
+<li class="mr-4"><a href="/login">Giriş yap</a></li>
+<li class="mr-4"><a href="/sign_up">Üye ol</a></li>
+{% endif %}
+{% endblock %}
 {% block content %}
-
 <div>
-    <header class="bg-[#D61C4E] text-white flex items-center justify-between align-middle text-xl">
-        <div class="flex align-middle">
-            <img src="../static//own_recipe.png" alt="own_recipe" class="w-10 ml-4" />
-            <h1><a href="/" class="hover:text-white hover:no-underline mx-4">Senin Tarifin</a></h1>
-        </div>
-
-        <ul class="flex mx-4">
-
-            <!-- <li class="mr-4"><a href="/sign_up">Sign Up</a></li> -->
-            {% if username %}
-            <li class="mr-4 hover:no-underline no-underline hover:text-white"><a href="/account">Hesabın({{username}})</a></li>
-            <li class="mr-2"><a href="/logout">Çıkış yap</a></li>
-            {% else %}
-            <li class="mr-4"><a href="/login">Giriş yap</a></li>
-            <li class="mr-4"><a href="/sign_up">Üye ol</a></li>
-            {% endif %}
-        </ul>
-    </header>
     <div class="flex justify-center w-3/4 mx-auto my-4">
         <input type="text" placeholder="bugun ne yemek istersin?" id="search_value" class="border px-4 rounded">
         <button class="btn text-white bg-[#D61C4E] w-32 mx-4" id="search_button">Ara</button>
@@ -52,7 +41,6 @@
                     </div>
             </div>
             {% endfor %}
-
         </div>
         <div class="alternative_content hidden flex flex-wrap">
 
@@ -64,8 +52,6 @@
                 <p>by: <span id="username"></span></p>
             </div>
         </div>
-
-
     </main>
 </div>
 

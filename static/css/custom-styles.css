@@ -1,0 +1,12 @@
+@layer utilities {
+  .tarif-button {
+    color : white ;
+    background-color: #D61C4E;
+    width: 36;
+    margin: 4;
+  }
+/* btn text-light bg-[#D61C4E] w-24 m-2 */
+  .custom-text-red {
+    color: red;
+  }
+}

@@ -10,25 +10,14 @@
 {% endblock %}
 {% block link5 %}
 {% endblock %}
-
+{% block header %}
+<li class="mr-4"><a href="/account">Hesabın</a></li>
+<li class="mr-2"><a href="/logout">Çıkış yap</a></li>
+{% endblock %}
 {% block content %}
-<!--   -->
 <div>
-    <header class="bg-[#D61C4E] text-white flex items-center justify-between align-middle text-xl">
-        <div class="flex">
-            <img src="../static//own_recipe.png" alt="own_recipe" class="w-10 ml-4" />
-            <h1><a href="/" class="hover:text-white hover:no-underline mx-4">Senin Tarifin</a></h1>
-        </div>
-    
-        <ul class="flex mx-4">
-            <!-- <li class="mr-4 hover:no-underline no-underline hover:text-white"><a href="/add_recipe">Add Recipe</a></li> -->
-            <!-- <li class="mr-4"><a href="/sign_up">Sign Up</a></li> -->
-            <li class="mr-4"><a href="/account">Hesabın</a></li>
-            <li class="mr-2"><a href="/logout">Çıkış yap</a></li>
-        </ul>
-    </header>
     <main class="border w-3/4 mx-auto bg-[#FAC213] h-5/6">
-        <h2 class="mx-20 border-bottom text-2xl my-4">Tarif ekle</h2>
+        <h2 class="mx-20 border-bottom text-light text-2xl my-4">Tarif ekle</h2>
         <form method="POST" action="{{url_for('add_recipe')}}" enctype="multipart/form-data"
             class="flex flex-col text-center mx-20 py-4">
             <input type="file" name="file" placeholder="fotograf" class="my-4">

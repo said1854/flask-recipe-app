@@ -12,6 +12,7 @@
     {% block link4 %}{% endblock %}
     {% block link5 %}{% endblock %}
     <link rel="stylesheet" href="/static/css/custom.css">
+    <link rel="stylesheet" href="/static/css/custom-styles.css">
     <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -30,6 +31,15 @@
 </head>
 
 <body>
+    <header class="bg-[#D61C4E] text-white flex items-center justify-between align-middle text-xl">
+        <div class="flex">
+            <img src="../static//own_recipe.png" alt="own_recipe" class="w-10 ml-4" />
+            <h1><a href="/" class="hover:text-white hover:no-underline mx-4">Senin Tarifin</a></h1>
+        </div>
+        <ul class="flex mx-4">
+            {% block header %} {% endblock %}
+        </ul>
+    </header>
     <div>
         {% block content %} {% endblock %}
     </div>
